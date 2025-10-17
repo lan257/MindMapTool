@@ -20,5 +20,12 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="SqlSugarCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\Interfaces\" />
+    <Folder Include="Sqlite\DB\" />
   </ItemGroup>
 </Project>
