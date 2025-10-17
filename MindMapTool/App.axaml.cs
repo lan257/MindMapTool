@@ -2,10 +2,11 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
-using System.Linq;
 using Avalonia.Markup.Xaml;
+using MindMapTool.Sqlite.Sql;
 using MindMapTool.ViewModels;
 using MindMapTool.Views;
+using System.Linq;
 
 namespace MindMapTool;
 
@@ -14,6 +15,7 @@ public partial class App : Application
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+        MapEdit.Init();
     }
 
     public override void OnFrameworkInitializationCompleted()

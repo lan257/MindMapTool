@@ -9,7 +9,7 @@ namespace MindMapTool.Sqlite
 {
     public class Setting
     {
-        public static SqlSugarClient db = new SqlSugarClient(new ConnectionConfig
+        public static SqlSugarClient db = new(new ConnectionConfig
         {
             ConnectionString = "Data Source=MindMap.db",
             DbType = DbType.Sqlite,

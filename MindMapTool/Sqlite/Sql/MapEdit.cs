@@ -1,4 +1,6 @@
-﻿using MindMapTool.Core.Models;
+﻿using Microsoft.Data.Sqlite;
+using MindMapTool.Core.Models;
+using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,26 +12,47 @@ namespace MindMapTool.Sqlite.Sql
 {
     public class MapEdit
     {
-        void init()
+        public static void Init()
         {
+            var connectionString = "Data Source=MindMap.db";
+            using var connection = new SqliteConnection(connectionString);
+            connection.Open();
+
+            // 可以创建表
+            var command = connection.CreateCommand();
+            command.CommandText =
+            @"
+CREATE TABLE IF NOT EXISTS Maps (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL,
+    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+";
+            command.ExecuteNonQuery();
+
+            var db = new SqlSugarClient(new ConnectionConfig
+            {
+                ConnectionString = "Data Source=MindMap.db",
+                DbType = DbType.Sqlite,
+                IsAutoCloseConnection = true
+            });
+            Setting.db.CodeFirst.InitTables<Map>();
             var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var dbPath = Path.Combine(appData, "MindMapTool", "MindMap.db");
-            Setting.db.CodeFirst.InitTables<Map>();
         }
-        void addMap(Map map)
+        void AddMap(Map map)
         {
-            var newMap = new Map { Name = "我的第一张思维导图" };
-            Setting.db.Insertable(newMap).ExecuteCommand();
+            Setting.db.Insertable(map).ExecuteCommand();
         }
-        void deleteMap(Map map)
+        void DeleteMap(Map map)
         {
             Setting.db.Deleteable<Map>().Where(m => m.Id == map.Id).ExecuteCommand();
         }
-        void updateMap(Map map)
+        void UpdateMap(Map map)
         {
             Setting.db.Updateable(map).ExecuteCommand();
         }
-        List<Map> getAllMaps()
+        List<Map> GetAllMaps()
         {
             return Setting.db.Queryable<Map>().ToList();
         }
