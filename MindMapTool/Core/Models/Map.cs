@@ -15,5 +15,12 @@ namespace MindMapTool.Core.Models
         public string Name { get; set; }
 
         public DateTime CreatedAt { get; set; }
+        public Map(int Id,string Name)
+        {
+            this.Id= Id;
+            this.Name= Name;
+            this.CreatedAt = DateTime.Now;
+        }
+        public Map() { }
     }
 }

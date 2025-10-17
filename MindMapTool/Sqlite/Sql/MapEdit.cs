@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS Maps (
             var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var dbPath = Path.Combine(appData, "MindMapTool", "MindMap.db");
         }
-        void AddMap(Map map)
+        public static void AddMap(Map map)
         {
             Setting.db.Insertable(map).ExecuteCommand();
         }
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS Maps (
         {
             Setting.db.Updateable(map).ExecuteCommand();
         }
-        List<Map> GetAllMaps()
+        public static List<Map> GetAllMaps()
         {
             return Setting.db.Queryable<Map>().ToList();
         }
