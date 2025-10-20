@@ -19,6 +19,7 @@
     <PackageVersion Include="Irihi.Ursa" Version="1.13.0" />
     <PackageVersion Include="Irihi.Ursa.Themes.Semi" Version="1.13.0" />
     <PackageVersion Include="Microsoft.Data.Sqlite" Version="10.0.0-rc.2.25502.107" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0-rc.2.25502.107" />
     <PackageVersion Include="NLog" Version="6.0.5" />
     <PackageVersion Include="Notification.Avalonia" Version="2.1.0" />
     <PackageVersion Include="Semi.Avalonia" Version="11.3.7" />

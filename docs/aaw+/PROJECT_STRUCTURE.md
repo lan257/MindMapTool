@@ -10,7 +10,7 @@
   - /ViewModels                       # Avalonia UI 项目ViewModel层
   - /Views                            # Avalonia UI 项目View层
   - /Core                             # 核心领域模型与接口（跨平台可复用）
-  - /Sqlite                           # 数据库实现（StorageProvider）
+  - /Infrastructure.Sqlite            # SQLite + SQLSugar 实现（StorageProvider）
   - /MindMapTool.Services             # 应用服务（Navigation, Search, Indexing）
   - /MindMapTool.UI.Controls          # 自定义控件（MapCanvas, NodeView）
   - /MindMapTool.Plugins              # 插件接口 & 本地插件示例
