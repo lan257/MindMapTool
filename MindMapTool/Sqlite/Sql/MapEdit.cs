@@ -12,6 +12,9 @@ namespace MindMapTool.Sqlite.Sql
 {
     public class MapEdit
     {
+        /// <summary>
+        /// 初始化建表
+        /// </summary>
         public static void Init()
         {
             var connectionString = "Data Source=MindMap.db";
