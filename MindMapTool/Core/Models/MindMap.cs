@@ -14,7 +14,7 @@ namespace MindMapTool.Core.Models
         /// <summary>
         /// 思维导图Id
         /// </summary>
-        int Id { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// 思维导图标题
         /// </summary>

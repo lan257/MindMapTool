@@ -14,15 +14,15 @@ namespace MindMapTool.Core.Models
         /// <summary>
         /// Id
         /// </summary>
-        int Id { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// 父节点Id
         /// </summary>
-        int ParentId { get; set; }
+        public int ParentId { get; set; }
         /// <summary>
         /// 思维导图Id
         /// </summary>
-        int MapId { get; set; }
+        public int MapId { get; set; }
         /// <summary>
         /// 节点标题
         /// </summary>

@@ -4,6 +4,8 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
+using MindMapTool.Core.Models;
+using MindMapTool;
 using MindMapTool.Sqlite.Sql;
 using MindMapTool.ViewModels;
 using MindMapTool.Views;
@@ -17,7 +19,8 @@ public partial class App : Application
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
-        MapEdit.Init();
+        DataProviderFactory.Initialize();
+        _ = DataProviderFactory.Current;
     }
 
     public override void OnFrameworkInitializationCompleted()
