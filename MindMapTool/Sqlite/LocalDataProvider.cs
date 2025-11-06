@@ -15,13 +15,13 @@ namespace MindMapTool
     {
         public LocalDataProvider(ISqlSugarClient db)
         {
-            MindMaps = new LocalRepository<MindMap>(db);
-            Nodes = new LocalRepository<Node>(db);
+            MindMaps = new IMindMapRepository(db);
+            Nodes = new INodeRepository(db);
             NodeRelations = new LocalRepository<NodeRelation>(db);
         }
 
-        public IRepository<MindMap> MindMaps { get; }
-        public IRepository<Node> Nodes { get; }
+        public IMindMapRepository MindMaps { get; }
+        public INodeRepository Nodes { get; }
         public IRepository<NodeRelation> NodeRelations { get; }
     }
 }

@@ -4,8 +4,9 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
-using MindMapTool.Core.Models;
 using MindMapTool;
+using MindMapTool.Core.Models;
+using MindMapTool.Sqlite;
 using MindMapTool.Sqlite.Sql;
 using MindMapTool.ViewModels;
 using MindMapTool.Views;
@@ -76,6 +77,8 @@ public static class ServiceCollectionExtensions
     public static void AddCommonServices(this IServiceCollection collection)
     {
         collection.AddTransient<MainViewModel>();
+        collection.AddTransient<DataEditViewModel>();
+
         //collection.AddScoped<WeatherService>(provider =>
         //{
         //    var city = DateTime.Now.Hour < 12 ? "Beijing" : "Shanghai";

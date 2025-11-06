@@ -1,4 +1,5 @@
 ﻿using MindMapTool.Core.Models;
+using MindMapTool.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace MindMapTool
 {
     public interface IDataProvider
     {
-        IRepository<MindMap> MindMaps { get; }
-        IRepository<Core.Models.Node> Nodes { get; }
+        IMindMapRepository MindMaps { get; }
+        INodeRepository Nodes { get; }
         IRepository<NodeRelation> NodeRelations { get; }
     }
 

@@ -32,4 +32,10 @@
   <ItemGroup>
     <Folder Include="Core\Interfaces\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\DataEditView.axaml.cs">
+      <DependentUpon>DataEditView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

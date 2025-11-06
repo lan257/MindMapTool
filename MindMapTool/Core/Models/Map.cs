@@ -25,5 +25,9 @@ namespace MindMapTool.Core.Models
             this.CreatedAt = DateTime.Now;
         }
         public Map() { }
+        public string ToString()
+        {
+            return $"Id: {Id}, Name: {Name}, CreatedAt: {CreatedAt}";
+        }
     }
 }
