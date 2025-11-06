@@ -144,12 +144,20 @@ namespace MindMapTool.Sqlite
         public async Task DeleteAsync(int id)
         {
             Log.info("删除思维导图表-复杂");
-            //删除节点表
-            await _db.Deleteable<Node>().Where(x => x.MapId == id).ExecuteCommandAsync();
-            //删除节点关联表
-            await _db.Deleteable<NodeRelation>().Where(x => x.MA == id||x.MB == id).ExecuteCommandAsync();
-            //删除思维导图表
-            await _db.Deleteable<MindMap>().Where(x => x.Id == id).ExecuteCommandAsync();
+            try
+            {
+                //删除节点表
+                await _db.Deleteable<Node>().Where(x => x.MapId == id).ExecuteCommandAsync();
+                //删除节点关联表
+                await _db.Deleteable<NodeRelation>().Where(x => x.MA == id || x.MB == id).ExecuteCommandAsync();
+                //删除思维导图表
+                await _db.Deleteable<MindMap>().Where(x => x.Id == id).ExecuteCommandAsync();
+            }
+            catch (Exception ex)
+            {
+                Log.error("删除思维导图表-复杂失败："+ ex);
+                throw;
+            }
         }
     }
 
