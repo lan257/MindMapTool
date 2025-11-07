@@ -25,6 +25,9 @@
                     HorizontalAlignment="Stretch"
                     Command="{Binding DataEditCommand}"/>
 
+			<Button Content="思维导图展示"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding MindMapCommand}"/>
 			<Separator/>
 
 			<Button Content="设置"

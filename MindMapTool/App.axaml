@@ -7,8 +7,8 @@
 	<!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
 	<Application.Styles>
-		<FluentTheme />
-		<semi:SemiTheme Locale="zh-CN" />
-		<u-semi:SemiTheme Locale="zh-CN"/>
+		<FluentTheme  Mode="Light"/>
+		<semi:SemiTheme/>
+		<u-semi:SemiTheme/>
 	</Application.Styles>
 </Application>

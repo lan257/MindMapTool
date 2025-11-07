@@ -23,7 +23,7 @@ public partial class App : Application
         DataProviderFactory.Initialize();
         _ = DataProviderFactory.Current;
     }
-
+    public static ServiceProvider Services { get; private set; }
     public override void OnFrameworkInitializationCompleted()
     {
         // 如果使用 CommunityToolkit，则需要用下面一行移除 Avalonia 数据验证。
@@ -35,9 +35,9 @@ public partial class App : Application
         collection.AddCommonServices();
 
         // 从 collection 提供的 IServiceCollection 中创建包含服务的 ServiceProvider
-        var services = collection.BuildServiceProvider();
+        Services = collection.BuildServiceProvider();
 
-        var vm = services.GetRequiredService<MainViewModel>();
+        var vm = Services.GetRequiredService<MainViewModel>();
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
@@ -58,7 +58,6 @@ public partial class App : Application
 
         base.OnFrameworkInitializationCompleted();
     }
-
     private void DisableAvaloniaDataAnnotationValidation()
     {
         // Get an array of plugins to remove
@@ -74,11 +73,12 @@ public partial class App : Application
 }
 public static class ServiceCollectionExtensions
 {
-    public static void AddCommonServices(this IServiceCollection collection)
+    public static IServiceCollection AddCommonServices(this IServiceCollection collection)
     {
-        collection.AddTransient<MainViewModel>();
-        collection.AddTransient<DataEditViewModel>();
-
+        collection.AddSingleton<MainViewModel>();
+        collection.AddSingleton<DataEditViewModel>();
+        collection.AddSingleton<SideBarViewModel>();
+        return collection;
         //collection.AddScoped<WeatherService>(provider =>
         //{
         //    var city = DateTime.Now.Hour < 12 ? "Beijing" : "Shanghai";

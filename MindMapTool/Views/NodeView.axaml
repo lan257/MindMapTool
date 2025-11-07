@@ -1,0 +1,25 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:MindMapTool.ViewModels"
+    xmlns:canvas="using:Avalonia.Controls"
+    xmlns:u="using:Ursa.Avalonia"
+    x:DataType="vm:NodeViewModel"
+    x:Class="MindMapTool.Views.NodeView">
+
+	<u:UCard Width="160" Padding="10"
+             canvas:Canvas.Left="{Binding X}"
+             canvas:Canvas.Top="{Binding Y}">
+		<StackPanel Spacing="4">
+			<TextBlock Text="{Binding Title}"
+                       FontWeight="Bold"
+                       FontSize="14"/>
+
+			<TextBlock Text="{Binding Summary}"
+                       TextWrapping="Wrap"
+                       MaxHeight="60"
+                       Opacity="0.75"/>
+		</StackPanel>
+	</u:UCard>
+
+</UserControl>

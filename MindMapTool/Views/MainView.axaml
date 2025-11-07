@@ -21,7 +21,10 @@
 		<Button Content="New" Click="AddMap"/>
 		<Button Content="Open" Click="SelectMap"/>
 		<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
-		<views:DataEditView/>
+		<StackPanel  IsVisible="{Binding MindMapSelected}">
+			<views:MindMapView /></StackPanel>
+		<StackPanel  IsVisible="{Binding DataEditSelected}">
+			<views:DataEditView /></StackPanel>
 	</StackPanel>
   
 </UserControl>

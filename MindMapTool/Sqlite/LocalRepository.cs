@@ -135,6 +135,15 @@ namespace MindMapTool.Sqlite
 
             return result;
         }
+        /// <summary>
+        /// 获取思维导图所有节点
+        /// </summary>
+        /// <param name="mapId"></param>
+        /// <returns></returns>
+        public async Task<List<Node>> GetAllAsync(int mapId) =>
+            await _db.Queryable<Node>()
+                     .Where(n => n.MapId == mapId)
+                     .ToListAsync();
 
     }
     public class IMindMapRepository : LocalRepository<MindMap>
