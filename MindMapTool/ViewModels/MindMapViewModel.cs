@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MindMapTool.Core.Models;
 using MindMapTool.Tool;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,6 @@ namespace MindMapTool.ViewModels
     public partial class MindMapViewModel : ViewModelBase
     {
         [ObservableProperty] private int _iD;
-        public ObservableCollection<NodeViewModel> Nodes { get; } = new();
         public MindMapViewModel()
         {
             ID = _iD;
@@ -26,15 +26,7 @@ namespace MindMapTool.ViewModels
         /// </summary>
         public void Render()
         {
-            var rawNodes = DataProviderFactory.Current.Nodes.GetAllAsync(ID).Result;
-
-            var vmList = rawNodes.Select(n => new NodeViewModel(n)).ToList();
-
-            GraphTool.ApplySimpleTreeLayout(vmList);
-
-            Nodes.Clear();
-            foreach (var vm in vmList)
-                Nodes.Add(vm);
+            Log.info("渲染思维导图");
         }
     }
 }

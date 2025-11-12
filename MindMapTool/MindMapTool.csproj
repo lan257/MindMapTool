@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AngleSharp" />
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.Themes.Fluent" />
     <PackageReference Include="Avalonia.Fonts.Inter" />
@@ -23,22 +22,19 @@
     <PackageReference Include="Castle.Windsor" />
     <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="DCore.Base" />
-    <PackageReference Include="GraphQL" />
-    <PackageReference Include="GraphX" />
     <PackageReference Include="Irihi.Ursa.Themes.Semi" />
     <PackageReference Include="Microsoft.Data.Sqlite" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     <PackageReference Include="NLog" />
     <PackageReference Include="Notification.Avalonia" />
     <PackageReference Include="NuGet.DependencyResolver.Core" />
-    <PackageReference Include="QuickGraph" />
     <PackageReference Include="Semi.Avalonia" />
     <PackageReference Include="SqlSugarCore" />
-    <PackageReference Include="Stride.GraphX.PCL.Logic" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Core\Interfaces\" />
+    <Folder Include="Sqlite\Sql\" />
   </ItemGroup>
 
   <ItemGroup>

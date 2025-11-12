@@ -9,6 +9,9 @@ using static Dm.net.buffer.ByteArrayBuffer;
 
 namespace MindMapTool
 {
+    /// <summary>
+    /// Interface for data provider.
+    /// </summary>
     public interface IDataProvider
     {
         IMindMapRepository MindMaps { get; }

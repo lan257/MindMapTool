@@ -11,6 +11,9 @@ using Node = MindMapTool.Core.Models.Node;
 
 namespace MindMapTool
 {
+    /// <summary>
+    /// Local data provider implementation.
+    /// </summary>
     public class LocalDataProvider : IDataProvider
     {
         public LocalDataProvider(ISqlSugarClient db)

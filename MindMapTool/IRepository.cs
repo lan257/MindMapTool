@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace MindMapTool
 {
+    /// <summary>
+    /// Interface for repository pattern
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IRepository<T> where T : class, new()
     {
         Task<List<T>> GetAllAsync();

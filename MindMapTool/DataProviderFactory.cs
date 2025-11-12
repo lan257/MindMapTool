@@ -10,6 +10,9 @@ using static Dm.net.buffer.ByteArrayBuffer;
 
 namespace MindMapTool
 {
+    /// <summary>
+    /// 数据提供者工厂
+    /// </summary>
     public static class DataProviderFactory
     {
         private static IDataProvider? _current;

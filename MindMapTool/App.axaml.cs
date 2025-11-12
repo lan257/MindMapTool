@@ -1,16 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
-using MindMapTool;
-using MindMapTool.Core.Models;
-using MindMapTool.Sqlite;
-using MindMapTool.Sqlite.Sql;
 using MindMapTool.ViewModels;
 using MindMapTool.Views;
-using System;
 using System.Linq;
 
 namespace MindMapTool;

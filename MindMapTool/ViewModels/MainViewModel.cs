@@ -1,7 +1,4 @@
-﻿using AngleSharp.Dom;
-using CommunityToolkit.Mvvm.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 namespace MindMapTool.ViewModels;
 
 public partial class MainViewModel : ViewModelBase

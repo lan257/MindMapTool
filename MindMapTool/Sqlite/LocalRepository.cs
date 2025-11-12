@@ -1,15 +1,18 @@
-﻿using System;
+﻿using MindMapTool.Core.Models;
+using MindMapTool.Tool;
+using SqlSugar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MindMapTool.Sqlite
 {
-    using MindMapTool.Core.Models;
-    using MindMapTool.Tool;
-    using SqlSugar;
 
+    /// <summary>
+    /// 本地数据库仓库
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class LocalRepository<T> : IRepository<T> where T : class, new()
     {
         public readonly ISqlSugarClient _db;
@@ -55,6 +58,9 @@ namespace MindMapTool.Sqlite
         public async Task DeleteAsync(int id) =>
             await _db.Deleteable<T>().In(id).ExecuteCommandAsync();
     }
+    /// <summary>
+    /// 节点仓库
+    /// </summary>
     public class INodeRepository : LocalRepository<Node>
     {
         public INodeRepository(ISqlSugarClient db) : base(db) { }
@@ -146,6 +152,9 @@ namespace MindMapTool.Sqlite
                      .ToListAsync();
 
     }
+    /// <summary>
+    /// 思维导图仓库
+    /// </summary>
     public class IMindMapRepository : LocalRepository<MindMap>
     {
         public IMindMapRepository(ISqlSugarClient db) : base(db){}
