@@ -34,6 +34,11 @@ namespace MindMapTool.Core.Models
         /// </summary>
         public string? Content { get; set; }
         /// <summary>
+        /// 子节点集合，SQLSugar忽视此属性
+        /// </summary>
+        [SugarColumn(IsIgnore = true)]
+        public List<Node> Children { get; set; } = [];
+        /// <summary>
         /// 节点信息转换为字符串
         /// </summary>
         /// <returns></returns>

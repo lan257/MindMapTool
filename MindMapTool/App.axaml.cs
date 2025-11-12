@@ -72,6 +72,8 @@ public static class ServiceCollectionExtensions
         collection.AddSingleton<MainViewModel>();
         collection.AddSingleton<DataEditViewModel>();
         collection.AddSingleton<SideBarViewModel>();
+        //collection.AddSingleton<MindMapViewModel>();
+        //collection.AddSingleton<MindMapView>();
         return collection;
         //collection.AddScoped<WeatherService>(provider =>
         //{

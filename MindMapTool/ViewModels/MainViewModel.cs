@@ -12,8 +12,8 @@ public partial class MainViewModel : ViewModelBase
 
     public MainViewModel()
     {
-        MindMapSelected = false;
-        DataEditSelected = true;
+        MindMapSelected = true;
+        DataEditSelected = false;
     }
     /// <summary>
     /// 功能视图切换
