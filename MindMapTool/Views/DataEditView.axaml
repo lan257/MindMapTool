@@ -1,0 +1,121 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
+			 xmlns:model="using:MindMapTool.Models"
+			 xmlns:vm="using:MindMapTool.ViewModels"
+			 xmlns:views="using:MindMapTool.Views"
+			 x:DataType="vm:DataEditViewModel"
+             x:Class="MindMapTool.Views.DataEditView">
+	<UserControl.DataContext>
+		<vm:DataEditViewModel/>
+	</UserControl.DataContext>
+	<StackPanel Orientation="Vertical">
+		<!--功能区-数据编辑-->
+		<!--数据编辑区-->
+		<StackPanel
+			Orientation="Horizontal">
+			<TextBlock
+				Margin="5,25,0,0"
+				Text="ID" />
+			<TextBox
+				Margin="5,15,15,15"
+				Width="50"
+				Text="{Binding ID}" />
+			<TextBlock
+				Margin="5,25,0,0"
+				Text="标题" />
+			<TextBox
+				Margin="5,15,15,15"
+				Width="200"
+				Text="{Binding Title}" />
+			<TextBlock
+				Margin="5,25,0,0"
+				Text="内容" />
+			<TextBox
+				Margin="5,15,15,15"
+				Width="200"
+				Text="{Binding Content}" />
+			<TextBlock
+				Margin="5,25,0,0"
+				Text="思维导图节点" />
+			<TextBox
+				Margin="5,15,15,15"
+				Width="50"
+				Text="{Binding ID2}" />
+			<TextBlock
+				Margin="5,25,0,0"
+				Text="思维导图父节点" />
+			<TextBox
+				Margin="5,15,15,15"
+				Width="50"
+				Text="{Binding ID3}" />
+		</StackPanel>
+		<!--数据控制区-->
+		<StackPanel
+			Orientation="Horizontal">
+			<TextBlock Margin="5" Text="数据类型" />
+			<ComboBox SelectedIndex="{Binding DataTypeIndex}">
+				<ComboBoxItem>
+					<TextBlock VerticalAlignment="Center"
+								HorizontalAlignment="Center">思维导图</TextBlock>
+				</ComboBoxItem>
+				<ComboBoxItem>
+					<TextBlock VerticalAlignment="Center"
+								HorizontalAlignment="Center">节点</TextBlock>
+				</ComboBoxItem>
+				<ComboBoxItem>
+					<TextBlock VerticalAlignment="Center"
+								HorizontalAlignment="Center">节点关联</TextBlock>
+				</ComboBoxItem>
+			</ComboBox>
+		</StackPanel>
+		<!--事件控制区-->
+		<StackPanel
+			Orientation="Horizontal">
+			<Button
+				Margin="5,15,0,0"
+				Content="新增"
+				Command="{Binding AddCommand}" />
+			<Button
+				Margin="5,15,0,0"
+				Content="修改"
+				Command="{Binding UpdateCommand}" />
+			<Button
+				Margin="5,15,0,0"
+				Content="删除"
+				Command="{Binding DeleteCommand}" />
+			<Button
+				Margin="5,15,0,0"
+				Content="查询"
+				Command="{Binding QueryCommand}" />
+			<Button
+				Margin="5,15,0,0"
+				Content="清空"
+				Command="{Binding ClearCommand}" />
+		</StackPanel>
+		<!--数据显示区-->
+		<ScrollViewer
+			Margin="5"
+			VerticalScrollBarVisibility="Auto"
+			HorizontalScrollBarVisibility="Auto"
+			VerticalAlignment="Top">
+			<TextBox
+				Margin="5"
+				Height="500"
+				Text="{Binding Data}"
+				IsReadOnly="True"
+				AcceptsReturn="True"
+				FontFamily="Consolas"
+				FontSize="12"
+				TextWrapping="Wrap"
+				BorderThickness="0"
+				Background="Transparent"
+				VerticalContentAlignment="Top" />
+		</ScrollViewer>
+
+
+
+	</StackPanel>
+</UserControl>

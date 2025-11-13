@@ -19,6 +19,30 @@
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Castle.Windsor" />
     <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="DCore.Base" />
+    <PackageReference Include="Irihi.Ursa.Themes.Semi" />
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="NLog" />
+    <PackageReference Include="Notification.Avalonia" />
+    <PackageReference Include="NuGet.DependencyResolver.Core" />
+    <PackageReference Include="Semi.Avalonia" />
+    <PackageReference Include="SqlSugarCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\Interfaces\" />
+    <Folder Include="Sqlite\Sql\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\DataEditView.axaml.cs">
+      <DependentUpon>DataEditView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MindMapView.axaml.cs">
+      <DependentUpon>MindMapView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
