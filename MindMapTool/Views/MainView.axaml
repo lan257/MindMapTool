@@ -2,7 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:MindMapTool.ViewModels"
+             xmlns:model="using MindMapTool.Models"
+			 xmlns:vm="using:MindMapTool.ViewModels"
+			 xmlns:views="using:MindMapTool.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MindMapTool.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -12,5 +14,17 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<StackPanel
+		Orientation="Horizontal">
+		<views:SideBarView/>
+		<!--
+		<Button Content="New" Click="AddMap"/>
+		<Button Content="Open" Click="SelectMap"/>
+		<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+		<StackPanel  IsVisible="{Binding MindMapSelected}">
+			<views:MindMapView /></StackPanel>
+		<StackPanel  IsVisible="{Binding DataEditSelected}">
+			<views:DataEditView /></StackPanel>
+	</StackPanel>
+  
 </UserControl>
