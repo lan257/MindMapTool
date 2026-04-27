@@ -4,24 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "32ab0209c50e8b2f",
+        "id": "e63a08aaf1ca944f",
         "type": "tabs",
         "children": [
           {
-            "id": "34700b64aba1839f",
+            "id": "cb40b242e8e954f7",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          },
+          {
+            "id": "74bd0eea7b830691",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "版本控制与规划记录.md",
+                "file": "AI文档/项目研发说明.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "版本控制与规划记录"
+              "title": "项目研发说明"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -160,27 +171,42 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "34700b64aba1839f",
+  "active": "74bd0eea7b830691",
   "lastOpenFiles": [
-    "系统扩展与前后端分离设计.md",
+    "AI文档/金析为证_NET开发规范_v1.0_20260317.md",
+    "AI文档/项目研发说明.md",
+    "AI文档/项目说明.md",
+    "说明二.md",
+    "AI文档/金析为证_NET开发规范_v1.0_20260317.assets/image-20260318103315815.png",
+    "AI文档/金析为证_NET开发规范_v1.0_20260317.assets/image-20260318103258346.png",
+    "AI文档/金析为证_NET开发规范_v1.0_20260317.assets/image-20260318103221998.png",
+    "AI文档/金析为证_NET开发规范_v1.0_20260317.assets/image-20260318103026466.png",
+    "AI文档/金析为证_NET开发规范_v1.0_20260317.assets",
+    "AI文档/金析为证_NET开发规范_v1.0_20260317.docx",
+    "AI文档/金析为证_NET开发规范_v1.0_20260317.pdf",
+    "AI文档/未命名",
+    "AI文档/未命名.md",
+    "AI文档",
     "版本控制与规划记录.md",
+    "AI文档/说明.md",
+    "ARCHITECTURE.md",
+    "ROADMAP.md",
+    "PROJECT_STRUCTURE.md",
+    "系统扩展与前后端分离设计.md",
     "关于“欲望与防范”这一关系矛盾.md",
     "软件工程一定要会科学上网吗？并如何看待其与网络审查的关系.md",
     "数据库切换配置",
     "Untitled.base",
     "Untitled.canvas",
-    "ARCHITECTURE.md",
-    "PROJECT_STRUCTURE.md",
-    "ROADMAP.md",
     "Welcome.md"
   ]
 }
